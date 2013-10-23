@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <meta charset="utf-8">
+
+</head>
+<body>
+    <div id="header"><h1/>Opdracht 3A: <span class="blue">Conversiedoelen</span></h1></div>
+    <div id="container">
+      <div class="left"><div style="width: 2px; height: 690px; margin-top: -40px; display: block; background-color: #3182BD; position: absolute; margin-left: 550px; border: 2px solid #f6f6f6;"></div>
+      <p style="display: block; padding: 10px 20px; background-color: #3182BD; position: absolute; margin-top: -65px; margin-left: 450px; color: #f6f6f6">Target: 11.000 conversies</p>
+      </div>
+      <div class="right"><div style="width: 2px; height: 690px; display: block; margin-top: -40px; background-color: #6BAED6; position: absolute; margin-left: 300px; border: 2px solid #f6f6f6;"></div>
+      <p style="display: block; padding: 10px 20px; background-color: #6BAED6; position: absolute; margin-top: -65px; margin-left: 190px; color: #f6f6f6">Target: 10% conversieratio</p>
+    </div>
+    </div>
+    <script>
+var data = [10382,12588,11238,8394,13033,12837,9242,11212,12324,11852,13148,13145,13263,10098,8175,10951,12773,13456,9705,12316,9642,11403,10508,11274,13562,8971
+];
+
+d3.select(".left")
+    .append("div")
+    .selectAll("div")
+    .data(data)
+    .enter().append("div")
+    .style("width", function (d) { return d / 20 + "px"; })
+    .style("background-color","#3182BD")
+    .style("border","1px solid white")
+    .style("color","white")
+    .style("padding","2px")
+    .text(function (d) { return d; });
+</script>
+    <script>
+var data = [8,10,10,11,12,14,8,9,18,10,19,10,9,7,9,10,11,15,14,17,13,15,9,10,16,8,];
+
+d3.select(".right")
+    .append("div")
+    .selectAll("div")
+    .data(data)
+    .enter().append("div")
+    .style("width", function (d) { return d * 30 + "px"; })
+    .style("background-color","#6BAED6")
+    .style("border","1px solid white")
+    .style("color","white")
+    .style("padding","2px")
+    .text(function (d) { return d; });
+</script>
+</html>
